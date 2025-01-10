@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AMC Login Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-header bg-primary text-white text-center">
+            <h2>WELCOME TO AMC LOGIN PAGE</h2>
+        </div>
+        <div class="card-body">
+            <!-- Login Form -->
+            <form th:action="@{/amc/login}" method="POST">
+                <!-- Username Field -->
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" class="form-control" required />
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" required />
+                </div>
+
+                <!-- Login Button -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success">Login</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Display Message (if any) -->
+        <div th:if="${message}" class="card-footer bg-info text-white text-center">
+            <b>[[${message}]]</b>
+        </div>
+    </div>
+</div>
+</body>
+</html>

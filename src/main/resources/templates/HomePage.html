@@ -13,16 +13,16 @@
         </div>
         <div class="card-body">
             <form th:action="@{/amc/save}" method="POST">
-                ID <input type="text" name="userId" class="form-control"/> <br>
+                <!--ID <input type="number" name="userId" class="form-control"/> <br>-->
                 First Name <input type="text" name="firstName" class="form-control"/> <br>
                 Last Name <input type="text" name="lastName" class="form-control"/> <br>
                 UserName <input type="text" name="username" class="form-control"/> <br>
-                Password <input type="password" name="password" class="form-control"/> <br>
+                Password <input type="password" name="pwd" class="form-control"/> <br>
 
                 <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
                     <button type="submit" class="btn btn-success">Register</button>
                     <span style="margin: 0 10px;">|</span>
-                    <button type="submit" class="btn btn-success">Create</button>
+                    <button type="submit" class="btn btn-success" th:attr="formaction=@{login}">Login</button>
                 </div>
 
 

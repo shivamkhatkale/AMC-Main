@@ -21,10 +21,11 @@ import lombok.NoArgsConstructor;
 public class AmsUsers {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer userId;
+
 	private String username;
-	private String password;
+	private String pwd;
 	private Boolean enabled;
 	private String firstName;
 	private String lastName;
