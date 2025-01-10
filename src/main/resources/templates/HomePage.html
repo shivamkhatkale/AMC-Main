@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-header bg-primary text-white text-center">
+            <h2>WELCOME TO AMC REGISTER PAGE </h2>
+        </div>
+        <div class="card-body">
+            <form th:action="@{/amc/save}" method="POST">
+                ID <input type="text" name="userId" class="form-control"/> <br>
+                First Name <input type="text" name="firstName" class="form-control"/> <br>
+                Last Name <input type="text" name="lastName" class="form-control"/> <br>
+                UserName <input type="text" name="username" class="form-control"/> <br>
+                Password <input type="password" name="password" class="form-control"/> <br>
+
+                <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
+                    <button type="submit" class="btn btn-success">Register</button>
+                    <span style="margin: 0 10px;">|</span>
+                    <button type="submit" class="btn btn-success">Create</button>
+                </div>
+
+
+            </form>
+        </div>
+        <div th:if="${message}" class="card-footer bg-info text-white text-center">
+            <b> [[${message}]] </b>
+        </div>
+    </div>
+</div>
+</body>
+</html>
